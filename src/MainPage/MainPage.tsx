@@ -9,18 +9,16 @@ function useRandomNumber() {
 
 const startTime = Date.now();
 function useGetTimer() {
-  const [time, setTime] = useState<string>("");
+  const [time, setTime] = useState<number>(0);
 
   useEffect(() => {
-    const intervalRef = window.setInterval(() => {
-      const now = Date.now();
-
-      setTime((now - startTime).toString());
-    });
+    const intervalRef = setInterval(() => {
+      setTime(Date.now() - startTime);
+    }, 1000);
     return () => {
       clearInterval(intervalRef);
     };
-  });
+  }, []);
 
   return time;
 }
