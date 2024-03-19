@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FC, useMemo } from "react";
 import useRandomNumber from "../hooks/useRandomNumber";
 
