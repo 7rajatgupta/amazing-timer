@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, FC } from "react";
 
 // START - DO NOT EDIT
 function useRandomNumber() {
@@ -9,9 +9,9 @@ function useRandomNumber() {
 
 const startTime = Date.now();
 function useGetTimer() {
-  const [time, setTime] = React.useState<string>("");
+  const [time, setTime] = useState<string>("");
 
-  React.useEffect(() => {
+  useEffect(() => {
     const intervalRef = window.setInterval(() => {
       const now = Date.now();
 
@@ -25,7 +25,7 @@ function useGetTimer() {
   return time;
 }
 
-const Content: React.FC<{
+const Content: FC<{
   open: any;
 }> = (props) => {
   // START - DO NOT EDIT
@@ -38,8 +38,8 @@ const Content: React.FC<{
   return <div>Your random number is: {randomNumber}</div>;
 };
 
-const MainPage: React.FC = () => {
-  const [open, setOpen] = React.useState({ value: false });
+const MainPage: FC = () => {
+  const [open, setOpen] = useState({ value: false });
 
   const time = useGetTimer();
   return (
