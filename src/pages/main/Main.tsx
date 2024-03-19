@@ -1,41 +1,6 @@
-import { useEffect, useState, FC, useMemo } from "react";
-
-// START - DO NOT EDIT
-function useRandomNumber() {
-  const randomNumber = Math.trunc(Math.random() * 1000);
-  return randomNumber;
-}
-// END - DO NOT EDIT
-
-const startTime = Date.now();
-function useGetTimer() {
-  const [time, setTime] = useState<number>(0);
-
-  useEffect(() => {
-    const intervalRef = setInterval(() => {
-      setTime(Date.now() - startTime);
-    }, 1000);
-    return () => {
-      clearInterval(intervalRef);
-    };
-  }, []);
-
-  return time;
-}
-
-const Content: FC<{
-  open: any;
-}> = ({ open }) => {
-  // START - DO NOT EDIT
-  const randomNumber = useRandomNumber();
-  // END - DO NOT EDIT
-  const memoizedRandomNumber = useMemo(() => randomNumber, [open]);
-  return (
-    <h2 className="text-7xl font-bold tracking-tighter">
-      {open ? <>{memoizedRandomNumber}</> : <>🎲</>}
-    </h2>
-  );
-};
+import { useState, FC } from "react";
+import Content from "../../components/Content";
+import useGetTimer from "../../hooks/useGetTimer";
 
 const MainPage: FC = () => {
   const [open, setOpen] = useState<boolean>(false);
