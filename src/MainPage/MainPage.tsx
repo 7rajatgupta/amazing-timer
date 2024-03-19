@@ -50,7 +50,17 @@ const MainPage: FC = () => {
       <div className="container flex flex-col items-center gap-4 px-4 text-center md:gap-8">
         <div className="space-y-2">
           <p className="text-gray-800 mb-40 text-2xl font-bold">
-            Click the button to generate a random number
+            Click the button to generate a{" "}
+            <span
+              className={`text-3xl text-transparent bg-clip-text ${
+                open
+                  ? "bg-gradient-to-r from-pink-500 to-purple-500"
+                  : "bg-gradient-to-b from-green-400 to-blue-500"
+              }`}
+            >
+              random
+            </span>{" "}
+            number
           </p>
           <Content open={open} />
         </div>
@@ -65,7 +75,7 @@ const MainPage: FC = () => {
         <div className="container flex items-center justify-center space-x-2 text-center">
           <p className="text-md text-gray-700 dark:text-gray-400 mt-10">
             Page loaded{" "}
-            <span className="text-black tra">{Math.floor(time / 1000)}</span>{" "}
+            <span className="text-black">{Math.floor(time / 1000)}</span>{" "}
             seconds ago
           </p>
         </div>
