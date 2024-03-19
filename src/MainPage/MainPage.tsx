@@ -64,7 +64,9 @@ const MainPage: FC = () => {
       <div className="py-4">
         <div className="container flex items-center justify-center space-x-2 text-center">
           <p className="text-md text-gray-700 dark:text-gray-400 mt-10">
-            Page loaded {Math.floor(time / 1000)} seconds ago
+            Page loaded{" "}
+            <span className="text-black tra">{Math.floor(time / 1000)}</span>{" "}
+            seconds ago
           </p>
         </div>
       </div>
