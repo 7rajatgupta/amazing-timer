@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FC } from "react";
+import { useEffect, useState, FC, useMemo } from "react";
 
 // START - DO NOT EDIT
 function useRandomNumber() {
@@ -29,7 +29,8 @@ const Content: FC<{
   // START - DO NOT EDIT
   const randomNumber = useRandomNumber();
   // END - DO NOT EDIT
-  return open ? <div>Your random number is: {randomNumber}</div> : null;
+  const memoizedRandomNumber = useMemo(() => randomNumber, [open]);
+  return open ? <div>Your random number is: {memoizedRandomNumber}</div> : null;
 };
 
 const MainPage: FC = () => {
