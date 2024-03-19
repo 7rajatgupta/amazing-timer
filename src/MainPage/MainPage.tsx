@@ -25,15 +25,11 @@ function useGetTimer() {
 
 const Content: FC<{
   open: any;
-}> = (props) => {
+}> = ({ open }) => {
   // START - DO NOT EDIT
   const randomNumber = useRandomNumber();
   // END - DO NOT EDIT
-  if (!props.open.value) {
-    return null;
-  }
-
-  return <div>Your random number is: {randomNumber}</div>;
+  return open ? <div>Your random number is: {randomNumber}</div> : null;
 };
 
 const MainPage: FC = () => {
