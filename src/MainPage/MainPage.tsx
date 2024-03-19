@@ -33,23 +33,19 @@ const Content: FC<{
 };
 
 const MainPage: FC = () => {
-  const [open, setOpen] = useState({ value: false });
+  const [open, setOpen] = useState<boolean>(false);
 
   const time = useGetTimer();
+
+  function toggle() {
+    setOpen((prevValue) => !prevValue);
+  }
   return (
     <div>
-      <div>The page loaded {time} seconds ago</div>
-      <button
-        onClick={() =>
-          setOpen((value) => {
-            value.value = !value.value;
-            return value;
-          })
-        }
-      >
-        Generate random number
+      <div>The page loaded {Math.floor(time / 1000)} seconds ago</div>
+      <button onClick={toggle}>
+        {open ? "Hide" : "Generate random number"}
       </button>
-
       <Content open={open} />
     </div>
   );
