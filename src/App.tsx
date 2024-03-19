@@ -17,7 +17,7 @@ function App() {
         <MainPage />
       </main>
       <div className="py-4">
-        <div className="container flex items-center justify-center space-x-2 text-center">
+        <div className="flex items-center justify-center space-x-2 text-center">
           <p className="text-md text-gray-700 dark:text-gray-400">
             crafted with ❤️ by{" "}
             <a
