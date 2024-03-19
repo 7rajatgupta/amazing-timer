@@ -14,26 +14,16 @@ const MainPage: FC = () => {
     <div>
       <div className="container flex flex-col items-center gap-4 px-4 text-center md:gap-8">
         <div className="space-y-2">
-          <p className="text-gray-800 mb-40 text-2xl font-bold">
-            Click the button to generate a{" "}
-            <span
-              className={`text-3xl text-transparent bg-clip-text ${
-                open
-                  ? "bg-gradient-to-r from-pink-500 to-purple-500"
-                  : "bg-gradient-to-b from-green-400 to-blue-500"
-              }`}
-            >
-              random
-            </span>{" "}
-            number
+          <p className="text-gray-800 mb-32 text-2xl font-bold">
+            Click the button to generate a random number
           </p>
           <Content open={open} />
         </div>
         <button
-          className="mx-auto w-full max-w-xs h-10 items-center justify-center rounded-md border border-sky-800  bg-sky-600 text-md shadow-sm transition-colors hover:bg-sky-700 text-white font-bold"
+          className="mx-auto w-full max-w-xs h-12 items-center justify-center rounded-md border border-sky-800  bg-sky-600 text-md shadow-sm transition-colors hover:bg-sky-700 text-white font-bold"
           onClick={toggle}
         >
-          {open ? "Hide" : "Generate random number"}
+          {open ? "Hide" : "Generate Now !"}
         </button>
       </div>
       <div className="py-4">
