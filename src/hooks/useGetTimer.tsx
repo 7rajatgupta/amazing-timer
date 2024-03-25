@@ -7,7 +7,7 @@ export default function useGetTimer() {
   useEffect(() => {
     const intervalRef = setInterval(() => {
       setTime(Date.now() - startTime);
-    }, 1000);
+    }, 100);
     return () => {
       clearInterval(intervalRef);
     };

@@ -11,29 +11,23 @@ const MainPage: FC = () => {
     setOpen((prevValue) => !prevValue);
   }
   return (
-    <div>
-      <div className="container flex flex-col items-center gap-4 px-4 text-center md:gap-8">
-        <div className="space-y-2">
-          <p className="text-gray-800 mb-32 text-2xl font-bold">
-            Click the button to generate a random number
-          </p>
-          <Content open={open} />
-        </div>
+    <div className="w-full">
+      <p className="md:text-md text-white my-4 lg:text-2xl text-center sm:w-auto flex">
+        The page loaded{" "}
+        <span className="w-16 mx-1">{(time / 1000).toFixed(1)}</span> seconds
+        ago
+      </p>
+      <div className="container flex flex-col items-center  px-4 text-center gap-y-6">
         <button
-          className="mx-auto w-full max-w-xs h-12 items-center justify-center rounded-md border border-sky-800  bg-sky-600 text-md shadow-sm transition-colors hover:bg-sky-700 text-white font-bold"
+          className="bg-zinc-700 text-white px-3 py-1 border border-solid border-zinc-500 rounded-lg hover:bg-zinc-600 transition-all"
           onClick={toggle}
         >
-          {open ? "Hide" : "Generate Now !"}
+          Generate random number
         </button>
+        <Content open={open} />
       </div>
       <div className="py-4">
-        <div className="container flex items-center justify-center space-x-2 text-center">
-          <p className="text-md text-gray-700 dark:text-gray-400 mt-10">
-            Page loaded{" "}
-            <span className="text-black">{Math.floor(time / 1000)}</span>{" "}
-            seconds ago
-          </p>
-        </div>
+        <div className="container flex items-center justify-center space-x-2 text-center"></div>
       </div>
     </div>
   );
