@@ -5,10 +5,12 @@ import MainPage from "./pages/main";
 
 function App() {
   return (
-    <div className="grid place-content-center h-screen w-screen bg-black">
-      <main className="flex flex-col px-4 py-4 border border-solid border-zinc-700 bg-zinc-900 rounded-lg xl:px-32">
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-1 bg-gray-100 py-10 flex items-center justify-center">
         <MainPage />
       </main>
+      <Footer />
     </div>
   );
 }
